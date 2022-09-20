@@ -31,7 +31,24 @@ const usuariosController = {
 
     },
     login: (req,res) =>{
-        res.send('logando')
+        const {user_email, user_password} = req.body
+
+        const errors = []
+        const usuario = userJson.find(p=> p.email == user_email)
+        const password = bcrypt.compareSync(user_password, usuario.password)
+
+        if(usuario == undefined){
+            errors.push('email invalido confirme os dados e tente novamente')
+        }
+        if(!password){
+            errors.push('senha incorreta')
+        }
+        if(errors.length > 0 ){
+            res.send('imposivel fazer login : ' + errors)
+        }
+        
+        req.session.usuario = usuario.email
+        res.redirect('/')
     }
 }
 
