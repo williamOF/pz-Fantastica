@@ -11,18 +11,30 @@
 
 <body>
     <link rel="stylesheet" href="/css/index.css">
-    <div>
-        <a href="/user/">login</a>
-    </div>
     <form action="/pizzas/busca" method="get" id="form-busca">
         <input type="text" name="q" placeholder="Qual pizza você procura?" autocomplete="off" value="">
         <button type="submit">Buscar</button>
-        <a href="/pizzas/carrinho">
-            <%= quantidade %> 
-        </a>
     </form>
 
-
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cart/">Carrinho</a></li>
+                <li><a href="/user/">Login</a></li>
+                <% if(admin != 'deslogado') {%>
+                    <li><a href="/user/perfil">Perfil</a></li>
+                <% } %>   
+            </ul>
+            <div class="cart"> 
+                    <label for="menuCart">Carrinho: </label>
+                    <div class="menuCart" name="">
+                        <a href="/carrinho"><%= quantidade %> </a>
+                    </div>
+            </div>
+        </nav>
+        
+    </header>
     <main>
         
         <% for(let p of pizzas){ %>

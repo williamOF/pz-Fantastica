@@ -4,6 +4,7 @@ const app = express();
 // **************** Requirer Router **************** //
 const PizzasRouter = require('./routes/PizzasRouter')
 const userRouter = require ('./routes/userRouter.js')
+const carrinho = require ('./routes/carrinho');
 
 // **************** Requirer Middlewares **************** //
 const RegistraHoraDeAcesso = require('./middlewares/RegistraHoraDeAcesso');
@@ -26,6 +27,7 @@ app.use(RegistraHoraDeAcesso); // middleware função gravar hora de acesso
 app.use(express.json())
 
 // **************** Routes ****************//
+app.use('/cart', carrinho);
 app.use('/pizzas', PizzasRouter);
 app.use('/user', userRouter);
 

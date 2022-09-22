@@ -23,7 +23,7 @@
         "preco": 48.55,
         "img": "/img/pepperoni.jpg",
         "destaque": false,
-        "score": 18
+        "score": 19
     },
     {
         "id": 3,
@@ -37,7 +37,7 @@
         "preco": 38.5,
         "img": "/img/fracatu.jpg",
         "destaque": true,
-        "score": 14
+        "score": 15
     },
     {
         "id": 4,

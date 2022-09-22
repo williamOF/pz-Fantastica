@@ -190,3 +190,48 @@ main article:hover a:hover {
     font-size: 1.5rem;
     text-align: center;
 }
+
+.menu{
+    margin-top: 100px;
+    border-bottom: #FFF 1px solid;
+    display: flex;
+}
+.menu ul {
+    list-style: none;
+}
+.menu ul li{
+    display: inline-block;
+    margin-right: 30px;
+    padding: 20px;
+    width: 120px;
+    background-color: rgb(255, 81, 0);
+}
+
+.menu a{
+    text-decoration: none;
+    color: #FFF;
+    text-transform: lowercase;
+    font-size: 15pt;
+}
+
+
+.cart{
+    display: flex;
+    align-items: center;
+    color: #FFF;
+
+}
+
+.menuCart{
+    margin-left: 25px;
+    background-color: rgb(255, 81, 0);
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    position: relative;
+}
+.menuCart a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

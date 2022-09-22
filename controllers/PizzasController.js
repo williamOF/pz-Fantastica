@@ -13,13 +13,20 @@ module.exports = {
 
     index: (req, res) => {
 
+        let admin = req.session.usuario
+        if(admin == undefined){
+            admin = 'deslogado'
+        }
+
         let quantidade = 0
+
         let array = req.session.aEscolhida
+        
         if(req.session.aEscolhida){
             quantidade = array.length
         }
-        
-        res.render('index.ejs',{ pizzas, quantidade });
+
+        res.render('index.ejs',{ pizzas, quantidade, admin });
     },
 
     show: (req, res) => {
