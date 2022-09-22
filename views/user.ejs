@@ -22,14 +22,29 @@
                 <form action="/user/cadastro" method="post"> 
                   
                     <div>
-                        <label for="user_fullname">Nome completo: </label>
-                        <input type="text" name="user_fullname" id="">
+                        <label for="user_name">primeiro nome: </label>
+                        <input type="text" name="user_name" id="">
+                    </div>
+                    <div>
+                        <label for="user_sobrenome">Sobrenome: </label>
+                        <input type="text" name="user_sobrenome" id="">
                     </div>
                     <div>
                         <label for="user_email">Email válido</label>
                         <input type="email" name="user_email" id="">
                         <label for="re_user_email">Confirme o email</label>
                         <input type="email" name="re_user_email" id="">
+                    </div>
+                    <div>
+                        <label for="cep">Cep:
+                            <input type="number" name="cep" id="">
+                        </label>
+                        <label for="rua">complemento:
+                            <input type="text" name="complemento" id="">
+                        </label>
+                        <label for="tel">Telefone: 
+                            <input type="tel" name="tel" id="">
+                        </label>
                     </div>
                     <div>
                         <label for="user_password">Senha:</label>

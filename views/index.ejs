@@ -21,10 +21,17 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/cart/">Carrinho</a></li>
-                <li><a href="/user/">Login</a></li>
-                <% if(admin != 'deslogado') {%>
+
+                <% if(admin == 'false') {%>
+                    <li>
+                        <a href="/user/">Login</a>
+                    </li>
+                <% } %> 
+
+                <% if(admin == 'true') {%>
                     <li><a href="/user/perfil">Perfil</a></li>
-                <% } %>   
+                <% } %>  
+
             </ul>
             <div class="cart"> 
                     <label for="menuCart">Carrinho: </label>

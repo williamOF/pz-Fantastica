@@ -16,22 +16,31 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/cart/">Carrinho</a></li>
-                <li><a href="/user/">Login</a></li>
-                <% if(admin != 'deslogado') {%>
+
+                <% if(admin == 'false') {%>
+                    <li>
+                        <a href="/user/">Login</a>
+                    </li>
+                <% } %> 
+
+                <% if(admin == 'true') {%>
                     <li><a href="/user/perfil">Perfil</a></li>
-                <% } %>   
+                <% } %>  
+
             </ul>
         </nav>
-        
-    </header>d
-
-    </form>
-
-    <header>
         
     </header>
     <main>
         
+        <% for( let p of pizzasCarrinho) {%>
+            <article>
+                <img src="<%= p.img %> " alt="<%= p.name %> ">
+                <a href="/pizzas/<%= p.id %> ">Ver Mais</a>
+                <div><%= p.nome%> </div>
+                <span><%= p.preco %> </span>
+            </article>
+        <% } %> 
         
     </main>
 </body>

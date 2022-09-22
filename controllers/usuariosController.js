@@ -1,7 +1,7 @@
 const path = require ('path')
 const fs = require ('fs')
 const bcrypt = require('bcrypt')
-const { json } = require('express')
+const session = require('express-session')
 
 // ============== aceessing to user BD ============== //
 const userFile = path.join(__dirname, '../database/usuarios.json')
@@ -16,11 +16,15 @@ const usuariosController = {
         res.render('user')
     },
     cadastro: (req,res) =>{
-       const {user_fullname, user_email, user_password} = req.body
+       const {user_name,user_sobrenome , user_email,cep,complemento,tel, user_password} = req.body
 
        const newUser = {
-        name: user_fullname,
+        nome: user_name,
+        sobrenome: user_sobrenome,
         email: user_email,
+        cep,
+        complemento,
+        tel,
         password: bcrypt.hashSync( user_password, 10)
        }
        userJson.push(newUser)
@@ -48,6 +52,23 @@ const usuariosController = {
         }
         
         req.session.usuario = usuario.email
+        res.redirect('/')
+    },
+    perfil: (req,res) => {
+
+
+        const session = req.session.usuario
+
+        if(session == undefined){
+            res.redirect('/')
+        }
+
+        const usuario = userJson.find(p=> p.email == session)
+
+        res.render('perfil', {usuario})
+    },
+    logoff: (req,res)=>{
+        req.session.usuario = undefined
         res.redirect('/')
     }
 }

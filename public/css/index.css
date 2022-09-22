@@ -195,6 +195,8 @@ main article:hover a:hover {
     margin-top: 100px;
     border-bottom: #FFF 1px solid;
     display: flex;
+    align-items: center;
+    
 }
 .menu ul {
     list-style: none;

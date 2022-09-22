@@ -9,12 +9,14 @@ const pizzasJson = JSON.parse(leituraDados, null, 4);
 
 const controller = {
     carrinho: (req,res) => {
-        const admin = req.session.usuario
+        let admin = req.session.usuario
 
         if(admin == undefined){
-            amdin = 'deslogado'
+            admin = 'false'
+        }else{
+            admin = 'true'
         }
-        
+   
         const pizzasID = req.session.aEscolhida
 
         const pizzasCarrinho = []
@@ -26,8 +28,6 @@ const controller = {
                 pizzasCarrinho.push(item) //adicionando a um novo array
             }
         }
-    
-        console.log(pizzasCarrinho)
 
         res.render('carrinho', {admin, pizzasCarrinho})
     }

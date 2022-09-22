@@ -9,5 +9,7 @@ const ctValidator = require('../middlewares/ctValidator')
 router.get('/', user.index)
 router.post('/cadastro',ctValidator, user.cadastro)
 router.post('/login', user.login)
+router.get('/perfil', user.perfil)
+router.get('/logoff', user.logoff)
 
 module.exports = router
