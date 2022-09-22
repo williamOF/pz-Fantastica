@@ -20,6 +20,19 @@
     margin-right: 5px;
     transition: background-color 0.3s linear;
 }
+#form-busca a{
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+    color: #FFF;
+    top: 10px;
+    right: 10px;
+    box-shadow: 0 0 10px rgb(255, 81, 0);
+    width: 32px;
+    height: 32px;
+    text-decoration: none;
+}
 
 #form-busca input:focus {
     outline: 3px solid var(--cor-principal);

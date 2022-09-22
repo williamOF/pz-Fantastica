@@ -11,11 +11,15 @@
 
 <body>
     <link rel="stylesheet" href="/css/index.css">
-
+    <div>
+        <a href="/user/">login</a>
+    </div>
     <form action="/pizzas/busca" method="get" id="form-busca">
         <input type="text" name="q" placeholder="Qual pizza você procura?" autocomplete="off" value="">
         <button type="submit">Buscar</button>
-        <a href="/user/">login</a>
+        <a href="/pizzas/carrinho">
+            <%= quantidade %> 
+        </a>
     </form>
 
 

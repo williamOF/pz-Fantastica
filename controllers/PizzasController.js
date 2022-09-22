@@ -1,3 +1,4 @@
+const session = require('express-session')
 const fs = require ('fs')
 const path = require('path')
 
@@ -11,7 +12,14 @@ const pizzas = JSON.parse(ReadFile, null, 4)
 module.exports = {
 
     index: (req, res) => {
-        res.render('index.ejs',{ pizzas });
+
+        let quantidade = 0
+        let array = req.session.aEscolhida
+        if(req.session.aEscolhida){
+            quantidade = array.length
+        }
+        
+        res.render('index.ejs',{ pizzas, quantidade });
     },
 
     show: (req, res) => {
